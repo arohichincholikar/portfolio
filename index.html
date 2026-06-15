@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arohi ✿ Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=VT323&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="page">
+    <div class="checkerboard"></div>
+    <section class="hero">
+      <div class="left-side">
+        <div class="portfolio-logo">
+          <img src="title.png" alt="portfolio">
+          <span class="subtitle">code • design • data</span>
+        </div>
+        <div class="id-card">
+          <img src="images/profile.jpg" class="profile-img" alt="Arohi">
+          <div class="card-title">
+            digital <span>★</span> diary
+          </div>
+          <h2 class="name">
+            AR<span class="o-wrapper">O<span class="star">★</span></span>HI
+          </h2>
+          <div class="card-lines">
+            <div></div>
+            <div></div>
+          </div>
+          <div class="roles">
+            <p>00 CSE(DS)</p>
+            <p>01 Designer</p>
+          </div>
+          <nav class="card-nav">
+            <a href="#about">about</a>
+            <a href="#projects">projects</a>
+            <a href="#design">design</a>
+            <a href="#contact">contact</a>
+          </nav>
+          <div class="barcode"></div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="window">
+          <div class="window-bar">
+            <div class="window-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="window-title">meet_arohi.exe</span>
+            <span class="window-pin"></span>
+          </div>
+          <div class="window-content">
+            <div class="sticky-note">
+              <p class="hi-text">Hi! I'm Arohi ✿</p>
+              <p>
+                A CSE (Data Science) student passionate about web development,
+                data visualization and graphic design.
+              </p>
+            </div>
+            <div class="currently-box">
+              <p class="currently-label">✦ currently ✦</p>
+              <ul>
+                <li> Artista Executive Board</li>
+                <li> Web Dev Intern @ Dakshah Ebiz</li>
+                <li> Building creative web experiences</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- FOLDER TABS NAVIGATION -->
+    <div class="folders-wrapper">
+      <section id="about" class="folder-section active">
+        <a href="#about" class="folder-tab-hit">
+          <span class="folder-label">about</span>
+        </a>
+        <div class="folder-content about-text">
+  <h3>about_me.txt</h3>
+
+  <p>Hi, I’m Arohi!</p>
+
+  <p>I’m currently pursuing a degree in Computer Science, majoring in Data Science from GNITS (Hyderabad), but most of my time sits somewhere between coding, designing, organizing creative projects, and endlessly rearranging layouts.</p>
+
+  <p>I’ve always been drawn to both the technical and creative sides of technology. I enjoy solving problems through code, but I’m equally interested in how things look, feel, and communicate with people.</p>
+
+  <p>Most of my work explores that intersection: websites that are useful and beautiful, data projects that feel engaging, and design work that tells a story.</p>
+
+    <li>✦ B.Tech CSE (Data Science) Student</li>
+    <li>✦ Executive Board Member at Artista</li>
+    <li>✦ Web Development Intern at Dakshah Ebiz Consulting</li>
+    <li>✦ Exploring creative coding, UI/UX and digital experiences</li>
+</div>
+      </section>
+
+      <section id="projects" class="folder-section">
+
+  <a href="#projects" class="folder-tab-hit">
+    <span class="folder-label">projects</span>
+  </a>
+
+  <div class="folder-content">
+    <p>Web apps, ML projects, visualizers and creative coding experiments.</p>
+
+    <div class="marquee-section">
+      <div class="marquee-track">
+
+        <div class="project-card" onclick="openProject('digit')">
+          <img src="images/digit.png" alt="Digit Recognition">
+          <h3>Digit Recognition</h3>
+        </div>
+
+        <div class="project-card" onclick="openProject('sorting')">
+          <img src="images/sorting.png" alt="Sorting Visualizer">
+          <h3>Sorting Visualizer</h3>
+        </div>
+
+        <div class="project-card" onclick="openProject('canteen')">
+          <img src="images/canteen.png" alt="College Canteen App">
+          <h3>Canteen App</h3>
+        </div>
+
+        <div class="project-card" onclick="openProject('movie')">
+          <img src="images/movie.png" alt="Mood Movie Recommender">
+          <h3>Mood Movie</h3>
+        </div>
+
+        <div class="project-card" onclick="openProject('cyberdeck')">
+          <img src="images/cyberdeck.png" alt="Cyberdeck OS">
+          <h3>Cyberdeck OS</h3>
+        </div>
+
+        <div class="project-card" onclick="openProject('digit')">
+          <img src="images/digit.png" alt="Digit Recognition">
+          <h3>Digit Recognition</h3>
+        </div>
+
+        <div class="project-card" onclick="openProject('sorting')">
+          <img src="images/sorting.png" alt="Sorting Visualizer">
+          <h3>Sorting Visualizer</h3>
+        </div>
+
+        <div class="project-card" onclick="openProject('canteen')">
+          <img src="images/canteen.png" alt="College Canteen App">
+          <h3>Canteen App</h3>
+        </div>
+
+        <div class="project-card" onclick="openProject('movie')">
+          <img src="images/movie.png" alt="Mood Movie Recommender">
+          <h3>Mood Movie</h3>
+        </div>
+
+        <div class="project-card" onclick="openProject('cyberdeck')">
+          <img src="images/cyberdeck.png" alt="Cyberdeck OS">
+          <h3>Cyberdeck OS</h3>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+      <section id="design" class="folder-section">
+        <a href="#design" class="folder-tab-hit">
+          <span class="folder-label">design</span>
+        </a>
+        <div class="folder-content">
+          <p>Posters, branding, social media designs and event visuals.</p>
+        </div>
+      </section>
+
+      <section id="contact" class="folder-section">
+        <a href="#contact" class="folder-tab-hit">
+          <span class="folder-label">contact</span>
+        </a>
+        <div class="folder-content">
+          <p>Let's connect through GitHub, LinkedIn or email.</p>
+        </div>
+      </section>
+    </div>
+    <div class="project-popup" id="projectPopup">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closeProject()">×</button>
+
+    <div class="popup-scroll">
+      <img id="popupImage" src="" alt="">
+      <h2 id="popupTitle"></h2>
+      <p id="popupDesc"></p>
+      <p id="popupStack"></p>
+
+      <a id="popupGithub" class="github-link" href="#" target="_blank">
+        view github repo →
+      </a>
+    </div>
+  </div>
+</div>
+  </main>
+ 
+  <script>
+    // Highlight active folder tab on scroll
+    const sections = document.querySelectorAll('.folder-section');
+    const tabs = document.querySelectorAll('.folder-tab');
+ 
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tabs.forEach(t => t.classList.remove('active'));
+          const id = entry.target.id;
+          const active = document.querySelector(`.folder-tab[href="#${id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.4 });
+ 
+    sections.forEach(s => observer.observe(s));
+  </script>
+  <script>
+  const folderSections = document.querySelectorAll('.folder-section');
+  const folderLinks = document.querySelectorAll('.card-nav a, .folder-tab-hit');
+
+  folderLinks.forEach(link => {
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href');
+      const targetFolder = document.querySelector(targetId);
+
+      folderSections.forEach(folder => {
+        folder.classList.remove('active');
+      });
+
+      targetFolder.classList.add('active');
+
+      targetFolder.scrollIntoView({
+        behavior:'smooth',
+        block:'center'
+      });
+    });
+  });
+</script>
+<script src="script.js"></script>
+</body>
+</html>
+ 
