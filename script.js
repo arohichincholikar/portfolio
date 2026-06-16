@@ -308,7 +308,7 @@ const projectData = {
     image: "images/digit.png",
     desc: "A machine learning model that classifies handwritten digits using the sklearn digits dataset.",
     stack: "Python • scikit-learn • NumPy • Pandas • Matplotlib",
-    github: "https://github.com/YOUR-USERNAME/YOUR-REPO"
+    github: "https://github.com/arohichincholikar/handwritten-digit-recognition.git"
   },
   
   sorting: {
@@ -316,31 +316,31 @@ const projectData = {
     image: "images/sorting.png",
     desc: "An interactive visualizer that demonstrates sorting algorithms step-by-step with animations.",
     stack: "HTML • CSS • JavaScript • DSA",
-    github: "https://github.com/YOUR-USERNAME/YOUR-REPO"
+    github: "https://github.com/arohichincholikar/sorting-visualiser.git"
   },
 
   canteen: {
     title: "Smart College Canteen App",
     image: "images/canteen.png",
-    desc:"",
-    stack:"",
-    github:""
+    desc:"A web-based food ordering and payment platform developed for college canteens. Designed for users as well as canteen admins.",
+    stack:"HTML • CSS • JavaScript • Firebase Authentication • Firestore",
+    github:"https://github.com/gnits-smart-canteen/college-canteen-app.git"
   },
 
   movie: {
     title: "Mood-Based Movie Recommender",
     image: "images/movie.png",
-    desc:"",
-    stack:"",
-    github:""
+    desc:"A movie recommendation website that suggests films based on user mood, preferred runtime, and viewing preferences.",
+    stack:"HTML • CSS • JavaScript • TMDB API",
+    github:"https://github.com/arohichincholikar/movie-mood-randomiser.git"
   },
 
   cyberdeck: {
     title:"Cyberdeck OS for Raspberry Pi",
     image: "images/cyberdeck.png",
-    desc:"",
-    stack:"",
-    github:""
+    desc:"Retro-inspired desktop environment built using Python and Pygame, designed as the software layer for a future handheld cyberdeck",
+    stack:"Python • Pygame • JSON • PyMuPDF",
+    github:"https://github.com/arohichincholikar/pixeldeck-os.git"
   }
 };
 

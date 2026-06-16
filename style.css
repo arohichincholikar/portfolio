@@ -483,15 +483,14 @@ body{
 }
 
 .project-card{
-  width:220px;
-  height:220px;
+  width:320px;
+  height:320px;
   flex-shrink:0;
   background:#fff8ec;
-  border:2px solid #171717;
-  border-radius:24px;
+  border: 0.1px solid #a5656c;
+  border-radius:20px;
   overflow:hidden;
   cursor:pointer;
-  box-shadow:6px 6px 0 rgba(0,0,0,.15);
   transition:.25s ease;
   position:relative;
 }
@@ -663,6 +662,69 @@ body{
 
 .about-list li::marker{
   content: "" !important;
+}
+
+
+.contact-content{
+  display:flex;
+  justify-content:center;
+}
+
+.letter{
+  max-width:700px;
+  background:rgba(255, 248, 236, 0.5);
+  padding:3rem;
+  border-radius:24px;
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+  line-height:1.9;
+}
+
+.letter h2{
+  font-family:'Playfair Display', serif;
+  font-style:italic;
+  margin-bottom:1rem;
+}
+
+.letter p{
+  margin-bottom:1rem;
+}
+
+.contact-links{
+  margin:2rem 0;
+
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+}
+
+.contact-links a{
+  text-decoration:none;
+  background:white;
+  color:#111;
+  padding:.9rem 1.3rem;
+  border-radius:999px;
+  transition:.25s;
+}
+
+.contact-links a:hover{
+  transform:translateY(-4px);
+  background:#171313;
+  color:white;
+}
+
+.signature{
+  margin-top:2rem;
+  font-style:italic;
+  color:#7a6a6a;
+}
+
+footer{
+  text-align:center;
+  padding:5rem 0 2rem;
+  font-size:1rem;
+  color:#7a6a6a;
+  line-height:1.5;
 }
 
 /* MOBILE */
