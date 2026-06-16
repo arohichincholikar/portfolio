@@ -193,7 +193,7 @@ body{
 .card-nav{
   position:absolute;
   right:30px;
-  top:90px;
+  top:80px;
   z-index:2;
   display:flex;
   flex-direction:column;
@@ -204,7 +204,7 @@ body{
 .card-nav a{
   color:#111;
   text-decoration:none;
-  font-size:1.75rem;
+  font-size:1.65rem;
   line-height:1;
 }
 
@@ -219,7 +219,7 @@ body{
   bottom:36px;
   z-index:2;
   width:112px;
-  height:55px;
+  height:50px;
   background:repeating-linear-gradient(
     90deg,
     #fff 0 2px,
@@ -369,13 +369,15 @@ body{
   position:absolute;
   inset:0;
   border-radius:inherit;
+
   background:repeating-linear-gradient(
     90deg,
-    rgba(0,0,0,.035) 0px,
-    rgba(0,0,0,.035) 1px,
+    var(--texture-color) 0px,
+    var(--texture-color) 1px,
     transparent 1px,
     transparent 4px
   );
+
   pointer-events:none;
   z-index:1;
 }
@@ -430,6 +432,7 @@ body{
 
 #about{
   background:#b7c58a;
+  --texture-color:rgba(0,0,0,.035);
   z-index:1;
 }
 
@@ -439,6 +442,7 @@ body{
 
 #projects{
   background:#f7f3e8;
+  --texture-color:rgba(0,0,0,.035);
   z-index:2;
 }
 
@@ -449,6 +453,7 @@ body{
 #design{
   background:#171313;
   color:white;
+  --texture-color:rgba(255,248,236,.08);
   z-index:3;
 }
 
@@ -458,6 +463,7 @@ body{
 
 #contact{
   background:#e7a4aa;
+  --texture-color:rgba(0,0,0,.035);
   z-index:4;
 }
 
@@ -488,7 +494,7 @@ body{
   flex-shrink:0;
   background:#fff8ec;
   border: 0.1px solid #a5656c;
-  border-radius:20px;
+  border-radius:10px;
   overflow:hidden;
   cursor:pointer;
   transition:.25s ease;
@@ -664,6 +670,20 @@ body{
   content: "" !important;
 }
 
+#professional{
+  background:#4a5f73;
+  --texture-color:rgba(255,248,236,.08);
+  color:#fff8ec;
+  z-index:4;
+}
+
+#professional .folder-tab-hit{
+  left:320px;
+}
+
+#contact{
+  z-index:5;
+}
 
 .contact-content{
   display:flex;
