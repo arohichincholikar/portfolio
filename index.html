@@ -4,10 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>arohi ✿ portfolio</title>
+  <title>arohi's portfolio ✿ </title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=VT323&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -105,43 +106,43 @@
           <div class="marquee-section">
             <div class="marquee-track">
               <div class="project-card" onclick="openProject('digit')">
-                <img src="images/digit.png" alt="Digit Recognition">
+                <img src="images/projects/digit.png" alt="Digit Recognition">
                 <h3>Digit Recognition</h3>
               </div>
               <div class="project-card" onclick="openProject('sorting')">
-                <img src="images/sorting.png" alt="Sorting Visualizer">
+                <img src="images/projects/sorting.png" alt="Sorting Visualizer">
                 <h3>Sorting Visualizer</h3>
               </div>
               <div class="project-card" onclick="openProject('canteen')">
-                <img src="images/canteen.png" alt="College Canteen App">
+                <img src="images/projects/canteen.png" alt="College Canteen App">
                 <h3>Canteen App</h3>
               </div>
               <div class="project-card" onclick="openProject('movie')">
-                <img src="images/movie.png" alt="Mood Movie Recommender">
+                <img src="images/projects/movie.png" alt="Mood Movie Recommender">
                 <h3>Mood Movie</h3>
               </div>
               <div class="project-card" onclick="openProject('cyberdeck')">
-                <img src="images/cyberdeck.png" alt="Cyberdeck OS">
+                <img src="images/projects/cyberdeck.png" alt="Cyberdeck OS">
                 <h3>Cyberdeck OS</h3>
               </div>
               <div class="project-card" onclick="openProject('digit')">
-                <img src="images/digit.png" alt="Digit Recognition">
+                <img src="images/projects/digit.png" alt="Digit Recognition">
                 <h3>Digit Recognition</h3>
               </div>
               <div class="project-card" onclick="openProject('sorting')">
-                <img src="images/sorting.png" alt="Sorting Visualizer">
+                <img src="images/projects/sorting.png" alt="Sorting Visualizer">
                 <h3>Sorting Visualizer</h3>
               </div>
               <div class="project-card" onclick="openProject('canteen')">
-                <img src="images/canteen.png" alt="College Canteen App">
+                <img src="images/projects/canteen.png" alt="College Canteen App">
                 <h3>Canteen App</h3>
               </div>
               <div class="project-card" onclick="openProject('movie')">
-                <img src="images/movie.png" alt="Mood Movie Recommender">
+                <img src="images/projects/movie.png" alt="Mood Movie Recommender">
                 <h3>Mood Movie</h3>
               </div>
               <div class="project-card" onclick="openProject('cyberdeck')">
-                <img src="images/cyberdeck.png" alt="Cyberdeck OS">
+                <img src="images/projects/cyberdeck.png" alt="Cyberdeck OS">
                 <h3>Cyberdeck OS</h3>
               </div>
             </div>
@@ -154,6 +155,24 @@
         </a>
         <div class="folder-content">
           <p>posters, branding, social media designs and event visuals.</p>
+          <div class="design-polaroids">
+
+  <div class="polaroid" onclick="openGallery('club')">
+    <img src="images/club-preview.jpg">
+    <p>club work</p>
+  </div>
+
+  <div class="polaroid" onclick="openGallery('ui')">
+    <img src="images/ui-preview.jpg">
+    <p>ui / web design</p>
+  </div>
+
+  <div class="polaroid" onclick="openGallery('archive')">
+    <img src="images/archive-preview.jpg">
+    <p>personal archive</p>
+  </div>
+
+</div>
         </div>
       </section>
       <section id="professional" class="folder-section">
@@ -212,8 +231,20 @@
         </div>
       </div>
     </div>
+    <div class="project-popup" id="galleryPopup">
+  <div class="popup-box gallery-popup-box">
+    <button class="popup-close" onclick="closeGallery()">×</button>
+
+    <div class="popup-scroll">
+      <h2 id="galleryTitle"></h2>
+      <p id="galleryDesc"></p>
+
+      <div class="gallery-wall" id="galleryWall"></div>
+    </div>
+  </div>
+</div>
     <footer>
-      <p>made with ♡ by arohi</p>
+      <p>made with ♥︎ by arohi</p>
       <p>© june 2026</p>
     </footer>
   </main>

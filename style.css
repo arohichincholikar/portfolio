@@ -33,6 +33,11 @@ body{
   border:8px solid #f4f1e8;
 }
 
+@font-face{
+  font-family:'AlwaysInMyHeart';
+  src:url('fonts/AlwaysInMyHeart.ttf') format('truetype');
+}
+
 /* CHECKERBOARD */
 
 .checkerboard{
@@ -461,6 +466,120 @@ body{
   left:55%;
 }
 
+.design-polaroids{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:90px;
+  padding:20px 40px;
+  flex-wrap:wrap;
+}
+
+.polaroid{
+  width:240px;
+  background:#fffdf8;
+  padding:12px 12px 45px;
+  box-shadow:6px 6px 16px rgba(0,0,0,.18);
+  cursor:pointer;
+  opacity:0;
+  transition:.3s ease;
+}
+
+.polaroid img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  display:block;
+}
+
+.polaroid p{
+  font-family:'AlwaysInMyHeart';
+  font-size:2rem;
+  color: #171717;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  margin-top:18px;
+  text-align:center;
+}
+
+.polaroid.pop-in{
+  animation:polaroidDrop .7s cubic-bezier(.18,.89,.32,1.28) forwards;
+}
+
+.polaroid:nth-child(1){
+  --rotation:-5deg;
+  transform:rotate(-5deg) translateY(-15px);
+  margin-top:10px;
+}
+
+.polaroid:nth-child(2){
+  --rotation:6deg;
+  transform:rotate(6deg) translateY(-15px);
+  margin-top:70px;
+}
+
+.polaroid:nth-child(3){
+  --rotation:3deg;
+  transform:rotate(3deg) translateY(-15px);
+  margin-top:25px;
+}
+
+@keyframes polaroidDrop{
+
+  0%{
+    opacity:0;
+    transform:
+      translateY(80px)
+      scale(.7)
+      rotate(var(--rotation));
+  }
+
+  70%{
+    opacity:1;
+    transform:
+      translateY(-10px)
+      scale(1.05)
+      rotate(var(--rotation));
+  }
+
+  100%{
+    opacity:1;
+    transform:
+      translateY(0)
+      scale(1)
+      rotate(var(--rotation));
+  }
+}
+
+.polaroid:hover{
+  transform:
+    translateY(-8px)
+    rotate(calc(var(--rotation) + 2deg))
+    scale(1.02);
+
+  box-shadow:
+    10px 14px 24px rgba(0,0,0,.18);
+}
+
+.polaroid{
+  opacity:0;
+  transform:translateY(40px) scale(.8) rotate(var(--rotation));
+  transition:
+    transform .45s cubic-bezier(.23,1,.32,1),
+    box-shadow .45s ease;
+}
+
+.polaroid.visible{
+  opacity:1;
+  transform:translateY(0) scale(1) rotate(var(--rotation));
+}
+
+.polaroid.visible:hover{
+  transform:translateY(-8px) scale(1.02) rotate(calc(var(--rotation) + 2deg));
+  box-shadow:10px 14px 24px rgba(0,0,0,.18);
+}
+
 #contact{
   background:#e7a4aa;
   --texture-color:rgba(0,0,0,.035);
@@ -668,6 +787,159 @@ body{
 
 .about-list li::marker{
   content: "" !important;
+}
+
+.frame{
+  position:relative;
+  overflow:visible;
+}
+
+.frame img{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:72%;
+  height:72%;
+  object-fit:contain;
+}
+
+/* rectangle frames: full artwork visible */
+.frame.landscape img,
+.frame.portrait img,
+.frame.square img,
+.frame.frame.ornate img{
+  object-fit:contain;
+}
+
+/* round/oval frames: crop nicely to fill opening */
+.frame.circle img,
+.frame.oval img{
+  object-fit:cover;
+  width:65%;
+  height:65%;
+  border-radius:50%;
+}
+
+.frame.landscape{
+  width:300px;
+  height:300px;
+}
+
+.frame.portrait{
+  width:170px;
+  height:240px;
+}
+
+.frame.square{
+  width:190px;
+  height:190px;
+}
+
+.frame.oval{
+  width:190px;
+  height:230px;
+}
+
+.frame.circle{
+  width:170px;
+  height:170px;
+}
+
+.frame.ornate{
+  width:210px;
+  height:210px;
+}
+
+.frame.landscape::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    url("images/frames/landscape.png")
+    center/contain
+    no-repeat;
+  pointer-events:none;
+}
+
+.frame.oval::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    url("images/frames/oval.png")
+    center/contain
+    no-repeat;
+  pointer-events:none;
+}
+
+.frame.ornate::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    url("images/frames/ornate.png")
+    center/contain
+    no-repeat;
+  pointer-events:none;
+}
+
+.frame.portrait::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    url("images/frames/portrait.png")
+    center/contain
+    no-repeat;
+  pointer-events:none;
+}
+
+.frame.circle::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    url("images/frames/circle.png")
+    center/contain
+    no-repeat;
+  pointer-events:none;
+}
+
+.frame.square::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    url("images/frames/square.png")
+    center/contain
+    no-repeat;
+  pointer-events:none;
+}
+
+.gallery-wall{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:flex-start;
+  gap:40px;
+  padding:2rem;
+}
+
+.gallery-popup-box{
+  width:min(1200px,90vw);
+}
+
+.frame:nth-child(2){
+  margin-top:70px;
+}
+
+.frame:nth-child(4){
+  margin-top:40px;
+}
+
+.frame:nth-child(6){
+  margin-top:90px;
 }
 
 #professional{
