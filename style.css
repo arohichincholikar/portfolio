@@ -77,8 +77,8 @@ body{
 
 .subtitle{
   position:absolute;
-  left:177px;
-  top:307px;
+  left:80px;
+  top:155px;
   font-family:'VT323', monospace;
   font-size:1.7rem;
 }
@@ -469,22 +469,64 @@ body{
 .design-cards{
   display:flex;
   justify-content:center;
+  align-items:flex-start;
   gap:32px;
   flex-wrap:wrap;
-  margin-top:5rem;
-}
-
-.design-cards img{
-  width:350px;
-  max-width:100%;
-  height:auto;
-  cursor:pointer;
-  transition:.3s ease;
+  margin-top:3rem;
+  padding-bottom:80px;
 }
 
 .design-cards img:hover{
   transform:translateY(-8px);
 }
+
+.design-card{
+  position:relative;
+  cursor:pointer;
+  width:350px;
+  flex:0 0 350px;
+}
+
+.design-card img{
+  width:100%;
+  height:auto;
+  display:block;
+  transition:.3s ease;
+}
+
+.card-note{
+  position:absolute;
+  left:50%;
+  bottom:-55px;
+
+  transform:
+    translateX(-50%)
+    translateY(10px);
+
+  background:#fff8ec;
+  color:#171717;
+
+  padding:8px 14px;
+
+  border-radius:12px;
+  font-size:.9rem;
+  white-space:nowrap;
+
+  opacity:0;
+  transition:.25s ease;
+
+  box-shadow:4px 4px 0 rgba(0,0,0,.08);
+
+  pointer-events:none;
+}
+
+.design-card:hover .card-note{
+  opacity:1;
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
+
 
 #contact{
   background:#e7a4aa;

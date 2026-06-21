@@ -696,6 +696,14 @@ const projectData = {
     desc:"Retro-inspired desktop environment built using Python and Pygame, designed as the software layer for a future handheld cyberdeck",
     stack:"Python • Pygame • JSON • PyMuPDF",
     github:"https://github.com/arohichincholikar/pixeldeck-os.git"
+  },
+
+  attendance: {
+    title:"Smart Attendance Planner using ML",
+    image: "images/projects/attendance.png",
+    desc:"A smart attendance management tool that predicts attendance risk, calculates safe absences, and helps plan for attendance goals.",
+    stack:"Python • Scikit-learn • Pandas • Streamlit • Joblib",
+    github:"https://github.com/arohichincholikar/attendsense.git"
   }
 };
 
