@@ -543,17 +543,27 @@ function closeProject(){
  
  
   /* ── 5. CHECKERBOARD — parallax on scroll ─────────────── */
- 
   const checker = document.querySelector('.checkerboard');
- 
-  if (checker) {
-    window.addEventListener('scroll', () => {
-      const y = window.scrollY * 0.35;
-      checker.style.backgroundPosition =
-        `${y * 0.5}px 0, ${y * 0.5}px 19px, ${19 + y * 0.5}px -19px, ${-19 + y * 0.5}px 0`;
-    }, { passive: true });
-  }
- 
+
+function initCheckerboard(){
+
+  if(window.innerWidth <= 700) return;
+
+  window.addEventListener('scroll', () => {
+
+    const y = window.scrollY * 0.35;
+
+    checker.style.backgroundPosition =
+      `${y * 0.5}px 0,
+       ${y * 0.5}px 19px,
+       ${19 + y * 0.5}px -19px,
+       ${-19 + y * 0.5}px 0`;
+
+  }, { passive:true });
+
+}
+
+initCheckerboard();
  
   /* ── 6. STICKY NOTE — typewriter effect ───────────────── */
  
