@@ -742,14 +742,18 @@ const designPages = {
     title: "club work / branding",
     desc: "theme pitches, visual direction and identity explorations.",
     items: [
-      { type:"project", id:"pixelverse", title:"pixelverse pitch", image:"images/design/covers/pixelverse-cover.png" }
+      { type:"project", id:"pixelverse", title:"pixelverse pitch", image:"images/design/pixelverse-cover.png", pdf: "documents/pixelverse-pitch.pdf"}
     ]
   },
 
   "club-posters": {
     title: "club work / posters",
     desc: "poster designs and promotional graphics for club events.",
-    items: []
+    items: [
+      { type:"project", id:"winterfest", title:"winter fest poster", image:"images/design/club/winterfest.png"},
+      { type:"project", id:"kathaa", title:"kathaa workshop poster", image:"images/design/club/kathaa.png"},
+      { type:"project", id:"concept", title:"event poster concept", image:"images/design/club/concept.png"}
+    ]
   },
 
   "club-events": {
@@ -830,7 +834,9 @@ const designPages = {
   "archive-posters": {
     title: "personal archive / posters",
     desc: "personal-use posters and visual layouts made for fun.",
-    items: []
+    items: [
+      { type:"project", id:"jeffbuckley", title:"jeff buckley poster", image:"images/design/archive/jeffbuckley.png" }
+    ]
   },
 
   "archive-experiments": {
@@ -879,7 +885,9 @@ function renderDesignPage(pageId){
       if(item.type === "folder"){
         designHistory.push(pageId);
         renderDesignPage(item.id);
-      } else {
+      } else if(item.pdf){
+        window.open(item.pdf, "_blank");
+      } else{
         openDesignProject(item.id);
       }
     };
