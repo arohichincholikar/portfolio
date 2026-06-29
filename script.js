@@ -725,96 +725,188 @@ function closeProject(){
   document.getElementById("projectPopup").classList.remove("active");
 }
 
-const designFolder = document.querySelector("#design");
-const designPolaroids = document.querySelectorAll("#design .polaroid");
+let designHistory = [];
 
-if(designFolder){
-
-  const designObserver = new MutationObserver(() => {
-
-    if(designFolder.classList.contains("active")){
-
-      designPolaroids.forEach((card,index)=>{
-
-        card.classList.remove("visible");
-
-        setTimeout(() => {
-          card.classList.add("visible");
-        }, index * 180);
-
-      });
-
-    }
-
-  });
-
-  designObserver.observe(designFolder,{
-    attributes:true,
-    attributeFilter:["class"]
-  });
-
-}
-const galleryData = {
+const designPages = {
   club: {
     title: "club work",
-    desc: "event posters, social media creatives, workshop graphics and visual design made for Artista.",
-    images: [
-      { src: "images/design/club1.png", frame: "portrait" },
-      { src: "images/design/club2.png", frame: "ornate" },
-      { src: "images/design/club3.png", frame: "landscape" }
+    desc: "art club work organized into branding, posters and event visuals.",
+    items: [
+      { type:"folder", id:"club-branding", title:"branding", image:"images/design/folders/club-branding.png" },
+      { type:"folder", id:"club-posters", title:"posters", image:"images/design/folders/club-posters.png" },
+      { type:"folder", id:"club-events", title:"event visuals", image:"images/design/folders/club-events.png" }
     ]
   },
 
-  ui: {
-    title: "ui / web design",
-    desc: "website layouts, interface explorations, portfolio designs and visual systems.",
-    images: [
-      { src: "images/design/ui1.png", frame: "landscape" },
-      { src: "images/design/ui2.png", frame: "landscape" },
-      { src: "images/design/ui3.png", frame: "square" }
+  "club-branding": {
+    title: "club work / branding",
+    desc: "theme pitches, visual direction and identity explorations.",
+    items: [
+      { type:"project", id:"pixelverse", title:"pixelverse pitch", image:"images/design/covers/pixelverse-cover.png" }
+    ]
+  },
+
+  "club-posters": {
+    title: "club work / posters",
+    desc: "poster designs and promotional graphics for club events.",
+    items: []
+  },
+
+  "club-events": {
+    title: "club work / event visuals",
+    desc: "photos, event identity and visuals used during club activities.",
+    items: []
+  },
+
+  uiweb: {
+    title: "ui & web design",
+    desc: "websites, interfaces and visual identity projects.",
+    items: [
+      { type:"folder", id:"ui-websites", title:"websites", image:"images/design/folders/ui-websites.png" },
+      { type:"folder", id:"ui-interfaces", title:"interfaces", image:"images/design/folders/ui-interfaces.png" },
+      { type:"folder", id:"ui-identities", title:"visual identities", image:"images/design/folders/ui-visuals.png" }
+    ]
+  },
+
+  "ui-websites": {
+    title: "ui & web design / websites",
+    desc: "websites designed and developed for personal, academic and professional use.",
+    items: [
+      { type:"project", id:"portfolio", title:"portfolio website", image:"images/design/covers/portfolio-cover.png" },
+      { type:"project", id:"dakshah", title:"dakshah redesign", image:"images/design/covers/dakshah-cover.png" }
+    ]
+  },
+
+  "ui-interfaces": {
+    title: "ui & web design / interfaces",
+    desc: "interface layouts, app flows and interaction-focused design work.",
+    items: [
+      { type:"project", id:"amazon", title:"amazon case study", image:"images/design/covers/amazon-cover.png" },
+      { type:"project", id:"canteen-ui", title:"canteen app ui", image:"images/design/covers/canteen-cover.png" }
+    ]
+  },
+
+  "ui-identities": {
+    title: "ui & web design / visual identities",
+    desc: "branding, packaging and editorial-style visual systems.",
+    items: [
+      { type:"project", id:"zauq", title:"zauq cafe branding", image:"images/design/covers/zauq-cover.png" },
+      { type:"project", id:"packaging", title:"3d packaging design", image:"images/design/covers/packaging-cover.png" },
+      { type:"project", id:"magazine", title:"magazine layouts", image:"images/design/covers/magazine-cover.png" }
     ]
   },
 
   archive: {
     title: "personal archive",
-    desc: "personal experiments, typography studies, magazine-style layouts and random creative work.",
-    images: [
-      { src: "images/design/archive1.png", frame: "ornate" },
-      { src: "images/design/archive2.png", frame: "circle" },
-      { src: "images/design/archive3.png", frame: "portrait" },
-      { src: "images/design/archive4.png", frame: "ornate"},
-      { src: "images/design/archive5.png", frame: "square"},
-      { src: "images/design/archive6.png", frame: "landscape"}
+    desc: "illustrations, sketches, posters and visual experiments.",
+    items: [
+      { type:"folder", id:"archive-illustrations", title:"illustrations", image:"images/design/folders/personal-illustrations.png" },
+      { type:"folder", id:"archive-sketchbook", title:"sketches", image:"images/design/folders/personal-sketchbook.png" },
+      { type:"folder", id:"archive-animation", title:"animation", image:"images/design/folders/personal-animations.png" },
+      { type:"folder", id:"archive-posters", title:"posters", image:"images/design/folders/personal-posters.png" },
+      { type:"folder", id:"archive-experiments", title:"experiments", image:"images/design/folders/personal-experiments.png" },
+      { type:"folder", id:"archive-crafts", title:"crafts & diys", image:"images/design/folders/personal-crafts.png" }
     ]
+  },
+
+  "archive-illustrations": {
+    title: "personal archive / illustrations",
+    desc: "digital drawings, character art and visual experiments.",
+    items: []
+  },
+
+  "archive-sketchbook": {
+    title: "personal archive / sketches",
+    desc: "pencil sketches, studies and rough visual ideas.",
+    items: []
+  },
+
+  "archive-animation": {
+    title: "personal archive / animation",
+    desc: "short motion experiments and animated pieces.",
+    items: []
+  },
+
+  "archive-posters": {
+    title: "personal archive / posters",
+    desc: "personal-use posters and visual layouts made for fun.",
+    items: []
+  },
+
+  "archive-experiments": {
+    title: "personal archive / experiments",
+    desc: "typography, layouts, textures and random creative tests.",
+    items: []
+  },
+
+  "archive-crafts": {
+    title: "personal archive / crafts & diys",
+    desc: "hands-on creative experiments, handmade work and DIYs.",
+    items: []
   }
 };
 
-function openGallery(id){
-  const gallery = galleryData[id];
-
-  if(!gallery) return;
-
-  document.getElementById("galleryTitle").textContent = gallery.title;
-  document.getElementById("galleryDesc").textContent = gallery.desc;
-
-  const wall = document.getElementById("galleryWall");
-  wall.innerHTML = "";
-
-  gallery.images.forEach((item, index) => {
-    const frame = document.createElement("div");
-    frame.className = `frame ${item.frame}`;
-
-    const img = document.createElement("img");
-    img.src = item.src;
-    img.alt = `${gallery.title} image ${index + 1}`;
-
-    frame.appendChild(img);
-    wall.appendChild(frame);
-  });
-
-  document.getElementById("galleryPopup").classList.add("active");
+function openDesignCategory(pageId){
+  designHistory = [];
+  renderDesignPage(pageId);
+  document.getElementById("designPopup").classList.add("active");
 }
 
-function closeGallery(){
-  document.getElementById("galleryPopup").classList.remove("active");
+function renderDesignPage(pageId){
+  const page = designPages[pageId];
+
+  if(!page) return;
+
+  document.getElementById("designPopupTitle").textContent = page.title;
+  document.getElementById("designPopupDesc").textContent = page.desc;
+
+  const grid = document.getElementById("designFolderGrid");
+  grid.innerHTML = "";
+
+  page.items.forEach(item => {
+    const card = document.createElement("div");
+
+    card.className = item.type === "folder"
+      ? "mini-folder-card"
+      : "mini-project-card";
+
+    card.innerHTML = `
+      <img src="${item.image}" alt="${item.title}">
+      <p>${item.title}</p>
+    `;
+
+    card.onclick = () => {
+      if(item.type === "folder"){
+        designHistory.push(pageId);
+        renderDesignPage(item.id);
+      } else {
+        openDesignProject(item.id);
+      }
+    };
+
+    grid.appendChild(card);
+  });
+
+  document.getElementById("designBackBtn").style.display =
+    designHistory.length ? "block" : "none";
+}
+
+function goBackDesign(){
+  const previousPage = designHistory.pop();
+
+  if(previousPage){
+    renderDesignPage(previousPage);
+  }
+}
+
+function closeDesignPopup(){
+  document.getElementById("designPopup").classList.remove("active");
+  designHistory = [];
+}
+
+function openDesignProject(projectId){
+  console.log("open design project:", projectId);
+
+  // next step:
+  // here we’ll open a case study / project details view
 }

@@ -560,7 +560,7 @@ body{
   height:320px;
   flex-shrink:0;
   background:#fff8ec;
-  border: 0.1px solid #a5656c;
+  border: 0.1px solid #242424;
   border-radius:10px;
   overflow:hidden;
   cursor:pointer;
@@ -642,7 +642,7 @@ body{
 .popup-scroll{
   max-height:85vh;
   overflow-y:auto;
-  padding:1.5rem;
+  padding:clamp(2.5rem, 5vw, 4rem);
 }
 
 .popup-close{
@@ -676,6 +676,26 @@ body{
 .popup-box p{
   line-height:1.6;
   margin-bottom:.7rem;
+}
+
+.gallery-popup-box{
+  width:min(1200px);
+  height:min(700px,88vh);
+}
+
+.popup-back{
+  position:absolute;
+  top:1rem;
+  left:1rem;
+  border:none;
+  background:#171717;
+  color:white;
+  font-size:1.2rem;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  cursor:pointer;
+  z-index:5;
 }
 
 .github-link{
@@ -737,157 +757,34 @@ body{
   content: "" !important;
 }
 
-.frame{
-  position:relative;
-  overflow:visible;
+.folder-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:2.5rem;
+    justify-items:center;
+    margin-top:2.5rem;
 }
 
-.frame img{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:72%;
-  height:72%;
-  object-fit:contain;
+.mini-folder-card{
+    width:200px;
+    cursor:pointer;
+    transition:.25s ease;
+    text-align:center;
 }
 
-/* rectangle frames: full artwork visible */
-.frame.landscape img,
-.frame.portrait img,
-.frame.square img,
-.frame.frame.ornate img{
-  object-fit:contain;
+.mini-folder-card:hover{
+    transform:translateY(-8px);
 }
 
-/* round/oval frames: crop nicely to fill opening */
-.frame.circle img,
-.frame.oval img{
-  object-fit:cover;
-  width:65%;
-  height:65%;
-  border-radius:50%;
+.mini-folder-card img{
+    width:100%;
+    display:block;
 }
 
-.frame.landscape{
-  width:300px;
-  height:300px;
-}
-
-.frame.portrait{
-  width:170px;
-  height:240px;
-}
-
-.frame.square{
-  width:190px;
-  height:190px;
-}
-
-.frame.oval{
-  width:190px;
-  height:230px;
-}
-
-.frame.circle{
-  width:170px;
-  height:170px;
-}
-
-.frame.ornate{
-  width:210px;
-  height:210px;
-}
-
-.frame.landscape::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    url("images/frames/landscape.png")
-    center/contain
-    no-repeat;
-  pointer-events:none;
-}
-
-.frame.oval::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    url("images/frames/oval.png")
-    center/contain
-    no-repeat;
-  pointer-events:none;
-}
-
-.frame.ornate::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    url("images/frames/ornate.png")
-    center/contain
-    no-repeat;
-  pointer-events:none;
-}
-
-.frame.portrait::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    url("images/frames/portrait.png")
-    center/contain
-    no-repeat;
-  pointer-events:none;
-}
-
-.frame.circle::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    url("images/frames/circle.png")
-    center/contain
-    no-repeat;
-  pointer-events:none;
-}
-
-.frame.square::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    url("images/frames/square.png")
-    center/contain
-    no-repeat;
-  pointer-events:none;
-}
-
-.gallery-wall{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  align-items:flex-start;
-  gap:40px;
-  padding:2rem;
-}
-
-.gallery-popup-box{
-  width:min(1200px,90vw);
-}
-
-.frame:nth-child(2){
-  margin-top:70px;
-}
-
-.frame:nth-child(4){
-  margin-top:40px;
-}
-
-.frame:nth-child(6){
-  margin-top:90px;
+.mini-folder-card p{
+    margin-top:.8rem;
+    font-size:1.3rem;
+    font-weight:700;
 }
 
 #professional{
@@ -970,17 +867,26 @@ footer{
 /* MOBILE */
 
 @media(max-width:700px){
+
+  body{
+    overflow-x:hidden;
+  }
+
+  .page{
+    border-width:4px;
+    overflow:hidden;
+  }
+
   .checkerboard{
-    height:90px;
+    height:85px;
     background-size:28px 28px;
     background-position:0 0, 0 14px, 14px -14px, -14px 0;
   }
 
-
   .hero{
     display:flex;
     flex-direction:column;
-    padding:24px 6% 4rem;
+    padding:24px 5% 3.5rem;
     gap:2rem;
   }
 
@@ -991,23 +897,26 @@ footer{
 
   .portfolio-logo{
     width:100%;
+    max-width:380px;
+    margin:0 auto;
   }
 
   .portfolio-logo img{
-    width:88vw;
+    width:100%;
     max-width:360px;
   }
 
   .subtitle{
-    left:55px;
-    top:155px;
-    font-size:1.1rem;
+    left:22%;
+    top:62%;
+    font-size:1.05rem;
   }
 
   .id-card{
     width:100%;
-    height:230px;
-    margin-top:18px;
+    max-width:360px;
+    height:225px;
+    margin:1rem auto 0;
     padding:18px;
     border-radius:16px;
   }
@@ -1015,121 +924,136 @@ footer{
   .profile-img{
     width:58px;
     height:58px;
-    top:28px;
-    left:30px;
+    top:24px;
+    left:24px;
   }
 
   .card-title{
-    font-size:1.2rem;
-    top:28px;
-    right:28px;
+    font-size:1.15rem;
+    top:24px;
+    right:24px;
   }
 
   .name{
-    font-size:3.1rem;
-    left:28px;
+    font-size:3rem;
+    left:24px;
     bottom:78px;
   }
 
-  .card-lines{
-    left:28px;
-    bottom:42px;
-  }
-
-  .card-lines div{
-    width:120px;
-    height:14px;
-    margin-bottom:8px;
-  }
-
-  .roles{
-    left:155px;
-    bottom:43px;
-    font-size:1rem;
-  }
-
   .card-nav{
-    right:28px;
-    top:72px;
+    right:24px;
+    top:68px;
     gap:3px;
   }
 
   .card-nav a{
-    font-size:1.05rem;
+    font-size:1rem;
+  }
+
+  .roles{
+    left:145px;
+    bottom:43px;
+    font-size:.95rem;
+  }
+
+  .card-lines{
+    left:24px;
+    bottom:42px;
+  }
+
+  .card-lines div{
+    width:110px;
+    height:14px;
+    margin-bottom:8px;
   }
 
   .barcode{
-    right:28px;
-    bottom:30px;
-    width:78px;
-    height:34px;
+    right:24px;
+    bottom:28px;
+    width:75px;
+    height:32px;
   }
 
   .window{
     width:100%;
-    margin-top:2rem;
+    max-width:380px;
+    margin:1.5rem auto 0;
   }
 
   .window-content{
     min-height:auto;
-    padding:18px;
+    padding:16px;
   }
 
   .sticky-note,
   .currently-box{
-    font-size:1.05rem;
+    font-size:1rem;
   }
 
   .folders-wrapper{
-    padding:6rem 0 8rem;
+    padding:5rem 0 7rem;
   }
 
   .folder-section{
     width:100%;
-    min-height:180px;
-    margin-top:-45px;
-    padding:1.5rem 6% 3rem;
-    border-radius:28px;
+    min-height:150px;
+    margin-top:-35px;
+    padding:1.2rem 5% 3rem;
+    border-radius:26px;
+  }
+
+  .folder-section:first-child{
+    margin-top:0;
   }
 
   .folder-section.active{
-    min-height:650px;
-    transform:translateY(-10px);
+    min-height:auto;
+    padding-bottom:4rem;
+    transform:translateY(-8px);
   }
 
   .folder-tab-hit{
-    top:-48px;
-    width:170px;
-    height:62px;
-    border-radius:24px 24px 0 0;
+    top:-45px;
+    width:145px;
+    height:58px;
+    border-radius:22px 22px 0 0;
   }
 
   .folder-label{
-    font-size:1rem;
+    font-size:.92rem;
   }
 
   #about .folder-tab-hit{
-    left:30px;
+    left:18px;
   }
 
   #projects .folder-tab-hit{
-    left:115px;
+    left:100px;
   }
 
   #design .folder-tab-hit{
-    left:45px;
+    left:28px;
   }
 
   #professional .folder-tab-hit{
-    left:135px;
+    left:125px;
   }
 
   #contact .folder-tab-hit{
-    left:70px;
+    left:72px;
   }
 
   .folder-content{
     font-size:.95rem;
+  }
+
+  .folder-section.active .folder-content{
+    margin-top:1.2rem;
+    max-height:none;
+  }
+
+  .marquee-section{
+    margin-top:1.5rem;
   }
 
   .marquee-track{
@@ -1141,22 +1065,34 @@ footer{
     height:210px;
   }
 
-  .design-polaroids{
-    gap:35px;
-    padding:20px 0;
+  .design-cards{
+    margin-top:2rem;
+    gap:24px;
+    padding-bottom:70px;
   }
 
-  .polaroid{
-    width:180px;
-    padding:10px 10px 35px;
+  .design-card{
+    width:280px;
+    flex:0 0 280px;
   }
 
-  .polaroid img{
-    height:150px;
+  .card-note{
+    white-space:normal;
+    width:240px;
+    text-align:center;
+    bottom:-58px;
   }
 
-  .polaroid p{
-    font-size:1.5rem;
+  .letter{
+    padding:2rem;
+  }
+
+  .contact-links{
+    gap:.7rem;
+  }
+
+  .contact-links a{
+    padding:.75rem 1rem;
   }
 
   .popup-box{
@@ -1165,7 +1101,8 @@ footer{
   }
 
   .gallery-popup-box{
-    width:94vw;
+    width:min(1400px,92vw);
+    height:min(900px,88vh);
   }
 
   footer{
