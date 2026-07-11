@@ -94,6 +94,7 @@ body{
   border-radius:18px;
   overflow:hidden;
   box-shadow:8px 8px 12px rgba(0,0,0,.13);
+  font-family:'Inter', sans-serif;
 }
 
 .card-bg{
@@ -130,14 +131,16 @@ body{
 
 .card-nav a{
   color:#111;
+  font-family: "Inter" sans-serif;
   text-decoration:none;
-  font: "Inter" sans-serif;
   font-size:1.65rem;
   line-height:1;
+  font-weight: 350;
 }
 
 .card-nav a:hover{
   color:#fff;
+  font-family: "Inter" sans-serif;
   transform:translateX(-6px);
 }
 
