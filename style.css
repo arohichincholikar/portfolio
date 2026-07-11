@@ -97,6 +97,25 @@ body{
   font-family:'Inter', sans-serif;
 }
 
+
+.id-card-wrap{
+  width:520px;
+  margin:35px auto 0;
+}
+
+.id-card{
+  width:520px;
+  height:325px;
+  max-width:none;
+  margin:0;
+}
+
+.id-card-wrap{
+  width:520px;
+  height:325px;
+  margin-top:35px;
+}
+
 .card-bg{
   position:absolute;
   inset:0;
@@ -851,38 +870,21 @@ footer{
   }
 
   .subtitle{
-    left:22%;
-    top:62%;
-    font-size:1.05rem;
+    left:10.5%;
+    top:79%;
+    zoom:.55;
+    font-size:1.3rem;
   }
-
-  .id-card{
+  
+  .id-card-wrap{
     width:520px;
-    height:325px;
-    transform:scale(.68);
-    transform-origin:top center;
-    margin:1rem auto -90px;
-  }
-
-  .profile-img{
-    top:34px;
-    left:36px;
-    width:112px;
-    height:112px;
-  }
-
-  .card-nav{
-    right:30px;
-    top:80px;
-  }
-
-  .card-nav a{
-    font-size:1.65rem;
+    zoom:.55;
+    margin:24px auto 0;
   }
 
   .window{
     width:100%;
-    max-width:380px;
+    zoom:.75;
     margin:1.5rem auto 0;
   }
 
