@@ -100,14 +100,6 @@ body{
 
 .id-card-wrap{
   width:520px;
-  margin:35px auto 0;
-}
-
-.id-card{
-  width:520px;
-  height:325px;
-  max-width:none;
-  margin:0;
 }
 
 .id-card-wrap{
@@ -884,6 +876,7 @@ footer{
 
   .window{
     width:100%;
+    max-width:380px;
     zoom:.75;
     margin:1.5rem auto 0;
   }

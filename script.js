@@ -414,7 +414,7 @@ const designPages = {
     items: [
       { type:"project", id:"photobooth", title:"pocket booth", image:"images/design/uiweb/photobooth.png", url:"https://arohichincholikar.github.io/pocket-booth/"},
       { type:"project", id:"matcha", title:"matcha atelier", image:"images/design/uiweb/matcha.png" },
-      { type:"project", id:"dressup", title:"dress me maybe", image:"images/design/uiweb/dressup.png" }
+      { type:"project", id:"dressup", title:"dress me maybe", image:"images/design/uiweb/dressup.png", url:"https://dress-me-maybe.onrender.com"}
     ]
   },
 
