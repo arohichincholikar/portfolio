@@ -413,7 +413,7 @@ const designPages = {
     desc: "websites designed and developed for personal, academic and professional use.",
     items: [
       { type:"project", id:"photobooth", title:"pocket booth", image:"images/design/uiweb/photobooth.png", url:"https://arohichincholikar.github.io/pocket-booth/"},
-      { type:"project", id:"matcha", title:"matcha atelier", image:"images/design/uiweb/matcha.png" },
+      { type:"project", id:"zodiac", title:"the natal issue", image:"images/design/uiweb/zodiac.png" , url:"https://the-natal-issue.netlify.app/"},
       { type:"project", id:"dressup", title:"dress me maybe", image:"images/design/uiweb/dressup.png", url:"https://dress-me-maybe.onrender.com"}
     ]
   },
